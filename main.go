@@ -3,7 +3,9 @@ package main
 import (
 	"fmt"
 	"log"
+	"math/rand"
 	"strconv"
+	"time"
 )
 
 func main() {
@@ -94,4 +96,9 @@ func Validate() {
 
 func Generate() {
 
+}
+
+func random(min, max int) int {
+	rand.Seed(time.Now().Unix())
+	return rand.Intn(max-min) + min
 }
