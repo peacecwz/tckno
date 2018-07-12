@@ -25,7 +25,7 @@ func Verify(strTcIdentity string) bool {
 
 	tcIdentity, err := strconv.Atoi(strTcIdentity)
 	if err != nil {
-		log.Panic(err)
+		log.Panic(err, tcIdentity)
 		return false
 	}
 
@@ -86,7 +86,7 @@ func Verify(strTcIdentity string) bool {
 		return false
 	}
 
-	fmt.Printf(string(tcIdentity) + " is valid")
+	fmt.Printf(strTcIdentity + " is valid")
 	return true
 }
 
