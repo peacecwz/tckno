@@ -9,7 +9,8 @@ import (
 )
 
 func main() {
-	Verify("12345678901")
+	//Verify("12345678901")
+	fmt.Printf(Generate())
 }
 
 func Verify(strTcIdentity string) bool {
@@ -25,7 +26,7 @@ func Verify(strTcIdentity string) bool {
 
 	tcIdentity, err := strconv.Atoi(strTcIdentity)
 	if err != nil {
-		log.Panic(err, tcIdentity)
+		log.Panic(err)
 		return false
 	}
 
@@ -86,7 +87,7 @@ func Verify(strTcIdentity string) bool {
 		return false
 	}
 
-	fmt.Printf(strTcIdentity + " is valid")
+	fmt.Printf(strconv.Itoa(tcIdentity) + " is valid")
 	return true
 }
 
@@ -94,11 +95,34 @@ func Validate() {
 
 }
 
-func Generate() {
+func Generate() string {
+	rand.Seed(time.Now().Unix())
+	var (
+		digits     [11]int
+		tcIdentity string
+	)
 
+	digits[0] = random(1, 10)
+	for i := 1; i < 9; i++ {
+		digits[i] = random(0, 10)
+	}
+
+	for i := 0; i < 9; i++ {
+		digits[9] += digits[i]
+	}
+	//TODO: Refactoring
+	digits[9] = ((digits[0]+digits[2]+digits[4]+digits[6]+digits[8])*7 -
+		(digits[1] + digits[3] + digits[5] + digits[7])) % 10
+	digits[10] = (digits[0] + digits[1] + digits[2] + digits[3] + digits[4] + digits[5] +
+		digits[6] + digits[7] + digits[8] + digits[9]) % 10
+
+	for i := 0; i < len(digits); i++ {
+		tcIdentity += strconv.Itoa(digits[i])
+	}
+
+	return tcIdentity
 }
 
 func random(min, max int) int {
-	rand.Seed(time.Now().Unix())
 	return rand.Intn(max-min) + min
 }
