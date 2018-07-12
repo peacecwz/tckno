@@ -13,7 +13,7 @@ func main() {
 	fmt.Printf(Generate())
 }
 
-func Verify(strTcIdentity string) bool {
+func Validate(strTcIdentity string) bool {
 	if len(strTcIdentity) != 11 {
 		fmt.Printf("Invalid length")
 		return false
@@ -91,7 +91,7 @@ func Verify(strTcIdentity string) bool {
 	return true
 }
 
-func Validate() {
+func Verify() {
 
 }
 
