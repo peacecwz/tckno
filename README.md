@@ -40,14 +40,14 @@ import (
 func main(){
   result := Validate("29896722612")
   if result {
-    fmt.Print("Is Valid")
+    fmt.Print("It's Valid")
   }
 }
 ```
 
 ### Verify TC Identity Number
 
-It's coming soon
+Coming soon
 
 ## License
 
