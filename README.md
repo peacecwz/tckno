@@ -5,7 +5,7 @@ Simple TC Identity number generator and validator (offline / online)
 
 Install package on your machine 
 
-```
+```sh
 $ go get -u github.com/peacecwz/tc-identity-utils
 ```
 
@@ -13,7 +13,7 @@ $ go get -u github.com/peacecwz/tc-identity-utils
 
 Generate TC Identity number. It's so simple
 
-```
+```go
 package main
 
 import (
@@ -29,7 +29,7 @@ func main(){
 ### Validate TC Identity Number
 
 
-```
+```go
 package main
 
 import (
