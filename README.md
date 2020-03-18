@@ -1,9 +1,9 @@
 # TC Identity Utils
-Simple TC Identity number generator and validator (offline / online)
+Simple TC Identity number generator and validator (offline)
 
 ## Getting Started
 
-Install package on your machine 
+Install package on your project 
 
 ```sh
 $ go get -u github.com/peacecwz/tc-identity-utils
@@ -18,37 +18,33 @@ package main
 
 import (
 	"fmt"
-	"github.com/peacecwz/tckno"
+    "github.com/peacecwz/tckno"
 )
 
 func main(){
-    tckNo := Generate()
-	fmt.Printf()
+    tckNo := tckno.Generate()
+	fmt.Printf(tckNo)
 }
 ```
 
 ### Validate TC Identity Number
-
 
 ```go
 package main
 
 import (
 	"fmt"
-	"github.com/peacecwz/tc-identity-utils"
+	"github.com/peacecwz/tckno"
 )
 
-func main(){
-  result := Validate("29896722612")
-  if result {
-    fmt.Print("It's Valid")
-  }
+func main() {
+    tckNo := "29896722612"
+    result, _ := tckno.Validate(tckNo)
+    if result {
+        fmt.Printf("%s identity number valid", tckNo)
+    }
 }
 ```
-
-### Verify TC Identity Number
-
-Coming soon
 
 ## License
 
