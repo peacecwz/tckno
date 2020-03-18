@@ -6,7 +6,7 @@ Simple TC Identity number generator and validator (offline)
 Install package on your project 
 
 ```sh
-$ go get -u github.com/peacecwz/tc-identity-utils
+$ go get -u github.com/peacecwz/tckno
 ```
 
 ### Generate TC Identity Number
