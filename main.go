@@ -1,5 +1,0 @@
-package tckno
-
-func main() {
-
-}
