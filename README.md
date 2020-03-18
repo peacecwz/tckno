@@ -18,11 +18,12 @@ package main
 
 import (
 	"fmt"
-	"github.com/peacecwz/tc-identity-utils"
+	"github.com/peacecwz/tckno"
 )
 
 func main(){
-	fmt.Printf(Generate())
+    tckNo := Generate()
+	fmt.Printf()
 }
 ```
 
