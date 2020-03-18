@@ -17,13 +17,13 @@ Generate TC Identity number. It's so simple
 package main
 
 import (
-	"fmt"
+    "fmt"
     "github.com/peacecwz/tckno"
 )
 
 func main(){
     tckNo := tckno.Generate()
-	fmt.Printf(tckNo)
+    fmt.Printf(tckNo)
 }
 ```
 
@@ -33,8 +33,8 @@ func main(){
 package main
 
 import (
-	"fmt"
-	"github.com/peacecwz/tckno"
+    "fmt"
+    "github.com/peacecwz/tckno"
 )
 
 func main() {
